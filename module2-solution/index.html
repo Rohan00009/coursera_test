@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<title>Module 2 Solution</title>
+</head>
+<body>
+	<h1>BASIC CALCULATOR</h1>
+	<div class="row">
+	<div class="container col-lg-4 col-md-6 col-sm-12">
+		<section>
+		<div id="simple interest calculator">
+			Simple Interest Calculator
+		</div>
+		<p>
+			<title>Simple Interest Calculator</title>
+    <style>
+      /* Add some basic styles to the page */
+      label {
+        display: inline-block;
+        width: 150px;
+        margin-bottom: 10px;
+      }
+      input[type="text"] {
+        width: 200px;
+        padding: 5px;
+        font-size: 16px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Simple Interest Calculator</h1>
+    <form id="interest-form">
+      <label for="principle">Principle:</label>
+      <input type="text" id="principle" name="principle"><br>
+      <label for="rate">Rate of interest:</label>
+      <input type="text" id="rate" name="rate"><br>
+      <label for="time">Time period:</label>
+      <input type="text" id="time" name="time"><br>
+      <button type="submit">Calculate</button>
+    </form>
+    <script>
+      // Add an event listener to the form submit event
+      document.getElementById("interest-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // prevent the form from submitting normally
+
+        // Retrieve the input values
+        var principle = parseFloat(document.getElementById("principle").value);
+        var rate = parseFloat(document.getElementById("rate").value);
+        var time = parseFloat(document.getElementById("time").value);
+
+        // Calculate the simple interest
+        var simple_interest = (principle * rate * time) / 100;
+
+        // Redirect the user to a new page with the result
+        window.location.href = "result.html?interest=" + simple_interest.toFixed(2);
+      });
+    </script>
+		</p>
+		</section>
+	</div>
+	<div class="container col-lg-4 col-md-6 col-sm-12">
+		<section>
+		<div id="largest of three numbers">
+			Largest of Three number
+		</div>
+		<p>
+			<h1 style="color:black; font-size: 20px; text-align: center;"> LARGEST AMONG 3 NUMBERS</h1>
+		<table>
+			<tr>
+				<td> <input type="text" name="a" id="first" placeholder="Enter first number"/> </td>
+			</tr>
+			<tr>
+				<td> <input type="text" name="b" id="second" placeholder="Enter second number"/> </td>
+			</tr>
+			<tr>
+				<td> <input type="text" name="c" id="third" placeholder="Enter third number"/> </td>
+			</tr>
+			<tr>
+				<td> <button onclick = "biggest()">Submit</button> </td>
+			</tr>
+		</table>
+		<div id = "num"></div>
+	</body>
+
+	<script type="text/javascript">
+		document.getElementById("largest of three numbers").addEventListener("biggest()", function(event) {
+        event.preventDefault()
+	function biggest()
+	{
+		var a,b,c;
+		a = parseInt(document.getElementById ("first").value);
+		b = parseInt(document.getElementById ("second").value);
+		c = parseInt(document.getElementById ("third").value);
+		if(a > b && a > c)
+		{
+			document.getElementById ("num").innerHTML = a+" is the biggest number";
+		}
+		else
+		if(b > c && b > a)
+		{
+			document.getElementById ("num").innerHTML = b+" is the biggest number";
+		}
+		else
+		{
+			document.getElementById ("num").innerHTML = c+"is the biggest number";
+		}
+		window.location.href = "result1.html?interest=" + simple_interest.toFixed(2);
+	}
+	</script> 
+		</p>
+		</section>
+	</div>
+	<div class="container col-lg-4 col-md-12 col-sm-12">
+		<section>
+		<div id="addition of two number">
+			Addition of two Numbers
+		</div>
+		<p>
+			  <h1>Add Two Numbers</h1>
+
+  <form>
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1" name="num1"><br><br>
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2" name="num2"><br><br>
+    <button type="button" onclick="addNumbers()">Add Numbers</button><br><br>
+    <label for="result">Result:</label>
+    <input type="text" id="result" name="result" readonly>
+  </form>
+
+  <script>
+    function addNumbers() {
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+      var result = num1 + num2;
+      document.getElementById("result").value = result;
+      window.location.href = "result2.html?interest=" + simple_interest.toFixed(2);
+    }
+  </script> 
+		</p>
+		</section>
+	</div>
+	</div>
+</body>
+</html>

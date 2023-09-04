@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Interest Result</title>
+  </head>
+  <body>
+    <h1>Simple Interest Result</h1>
+    <p>Simple Interest: $<span id="interest-value"></span></p>
+    <script>
+      // Retrieve the simple interest value from the URL query parameter
+      var urlParams = new URLSearchParams(window.location.search);
+      var interest = parseFloat(urlParams.get("interest"));
+
+      // Display the simple interest value on the page
+      var interestElement = document.getElementById("interest-value");
+      interestElement.innerText = interest.toFixed(2);
+    </script>
+  </body>
+</html>
